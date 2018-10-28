@@ -11,13 +11,17 @@ def serve_location_selection():
 @boreholeAPI.route('/cutaway_view/<location>')
 def show_cutaway(location):
   # TODO use location to get borehole data
-  bore_hole_data = {"lithological_data": ["blah", "blah", "blob"]}
+  bore_hole_data = {"lithological_data": {
+    "label": ["AC", "CL", "SC", "SM", "CL"],
+    "depth": [10, 70, 90, 140, 120]
+  }}
   return render_template('cutaway_view.html', bore_hole_data=bore_hole_data)
 
 
 # Wrapper to enable live-reload
-boreholeAPI.debug = True
+# boreholeAPI.debug = True
 server = Server(boreholeAPI)
 
 if __name__ == '__main__':
-  server.serve()
+  boreholeAPI.run(host='0.0.0.0')
+  # server.serve()

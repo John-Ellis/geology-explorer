@@ -9,13 +9,15 @@
 </head>
 <body>
   <main id="bore_hole_display">
-    <h4>See the rocks underneath your feet.</h4>
     <table class="earth_layer_table">
-    {% for layer in bore_hole_data.lithological_data %}
       <tr>
-        <td class="single_layer_formatting"><img src="../static/assets/earth_content/the_rock.jpg" alt={{layer}}></td>
+        <td class="single_layer_formatting"><img src="../static/assets/earth_content/you.png"/></td>
       </tr>
-    {% endfor %}
+      {% for layer in bore_hole_data.lithological_data.label %}
+      <tr>
+        <td class="single_layer_formatting" ><img style="height: {{bore_hole_data.lithological_data.depth[loop.index0] }}" src="../static/assets/earth_content/{{layer}}.png" alt={{layer}}></td>
+      </tr>
+      {% endfor %}
     </table>
   </main>
 </body>
