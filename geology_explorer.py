@@ -7,9 +7,11 @@ def serve_location_selection():
   return render_template('location_selection_page.html')
 
 
-@boreholeAPI.route('/cutaway_view')
-def show_cutaway():
-  return render_template('cutaway_view.html')
+@boreholeAPI.route('/cutaway_view/<location>')
+def show_cutaway(location):
+  #TODO use location to get borehole data
+  bore_hole_data = {"lithological_data": ["blah", "blah", "blob"]}
+  return render_template('cutaway_view.html', bore_hole_data=bore_hole_data)
 
 if __name__ == '__main__':
   boreholeAPI.run()

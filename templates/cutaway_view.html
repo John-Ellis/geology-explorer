@@ -3,8 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>Earth Exposed</title>
+  <link href="../static/css/cutaway_view.css" rel="stylesheet"></link>
 </head>
 <body>
-<h4>Put dirt Here</h4>
+  <main id="bore_hole_display">
+    <h4>Put dirt Here</h4>
+    <table class="earth_layer_table">
+    {% for layer in bore_hole_data.lithological_data %}
+      <tr>
+        <td class="single_layer_formatting"><img src="../static/assets/earth_content/the_rock.jpg" alt={{layer}}></td>
+      </tr>
+    {% endfor %}
+    </table>
+  </main>
 </body>
 </html>
