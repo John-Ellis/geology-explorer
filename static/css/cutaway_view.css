@@ -1,6 +1,16 @@
+main {
+  background-color: brown;
+}
+
 .earth_layer_table {
   table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
-  border: 3px solid purple;
+  background-color: blue;
+  border-spacing: 0px;
+
+}
+
+.single_layer_formatting {
+  border-spacing: 0px;
 }
